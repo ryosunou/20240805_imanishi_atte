@@ -1,0 +1,47 @@
+    .message {
+        color: red;
+        font-weight: bold;
+    }
+
+.attendance__content {
+    background: #221e1e0d;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.attendance-title {
+    text-align: center;
+    margin: 40px;
+}
+
+.attendance__alert--danger {
+    padding: 10px 0;
+    border-color: #f5c2c7;
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.attendance__alert--danger ul {
+    margin: 0;
+}
+
+.attendance__panel {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    gap: 40px;
+    margin-bottom: 120px;
+}
+
+.attendance__button-submit {
+    width: 400px;
+    height: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}

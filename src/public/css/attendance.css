@@ -1,0 +1,39 @@
+.date-content {
+    background: #221e1e0d;
+    padding:40px;
+}
+
+.date-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.date-navigation button {
+    background-color: white;
+    border:1px solid #007bff;
+    color: #007bff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.date-navigation span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    text-align: left;
+}
+
