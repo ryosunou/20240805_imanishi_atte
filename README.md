@@ -1,6 +1,8 @@
 # 20240805_imanishi_atte
 
-## アプリケーション名　Atte  
+## アプリケーション名　<br>
+Atte  
+
 ## 企業の勤怠管理システム
 <img width="944" alt="image" src="https://github.com/user-attachments/assets/0d673d17-1af9-4241-8b10-5deb3ea9f886">
 
@@ -18,8 +20,8 @@
 会員登録ログイン、ログアウト	 Laravelの認証機能を利用<br>勤務開始、勤務終了	　 日を跨いだ時点で翌日の出勤操作に切り替える  <br>休憩開始	、休憩終了　 1日で何度も休憩が可能	 
  <br>日付別勤怠情報取得	  <br>ページネーション	    5件ずつ取得
 
-### 使用技術（実行環境)
-<br>PHP 8.3.4<br>Laravel8.83.27<br>MySQL8.0.37
+### 使用技術（実行環境)<br>
+PHP 8.3.4<br>Laravel8.83.27<br>MySQL8.0.37
 
 ## テーブル設計
 
