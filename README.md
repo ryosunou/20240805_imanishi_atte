@@ -4,8 +4,7 @@
 企業の勤怠管理システム
 <img width="944" alt="image" src="https://github.com/user-attachments/assets/0d673d17-1af9-4241-8b10-5deb3ea9f886">
 
-作成した目的　　
-人事評価のため
+作成した目的<br>人事評価のため
 
 アプリケーションURL
 http://localhost/
