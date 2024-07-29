@@ -48,7 +48,7 @@ php artisan key:generate<br>
 ### マイグレーションの実行<br>
 php artisan migrate<br>
 
-###シーディングを実行する<br>
+### シーディングを実行する<br>
 php artisan db:seed
 
 
