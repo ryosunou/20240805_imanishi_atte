@@ -40,14 +40,16 @@ PHP 8.3.4<br>Laravel8.83.27<br>MySQL8.0.37
 #### 2.DockerDesktopアプリを立ち上げる<br>
 #### 3.docker-compose up -d --build
 
+
+
 ## Laravel環境の構築<br>
 
 #### 1.docker-compose exec php bash<br>
-2.composer install
+#### 2.composer install
      
 
 #### 3.「.env.example」ファイルを 「.env」ファイルに命名を変更。または、.envファイルを作成します<br>
-4. .env以下の環境変数を追加<br>
+#### 4. .env以下の環境変数を追加<br>
 
 DB_CONNECTION=mysql<br>
 
