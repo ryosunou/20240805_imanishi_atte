@@ -31,7 +31,7 @@ PHP 8.3.4<br>Laravel8.83.27<br>MySQL8.0.37
 ## 環境構築
 #### <br>Dockerビルド
 
-#### git clone git@github.com:estra-inc/confirmation-test-contact-form.git<br>
+#### 1.git clone git@github.com:estra-inc/confirmation-test-contact-form.git<br>
 #### DockerDesktopアプリを立ち上げる<br>
 #### docker-compose up -d --build
 
