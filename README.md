@@ -34,10 +34,9 @@ PHP 8.3.4<br>Laravel8.83.27<br>MySQL8.0.37
 
 ![スクリーンショット 2024-08-01 080757](https://github.com/user-attachments/assets/7fb3cca5-f8c9-4d79-ac93-e0610c52854a)
 
+breaks<br>
+![image](https://github.com/user-attachments/assets/6b749c5c-05a8-4f31-9f22-dc133338a6bb)
 
-
-
-![image](https://github.com/user-attachments/assets/82383cf4-b9ed-4f42-a65e-c7cf682c3f4f)
 
 ## ER図
 ![スクリーンショット 2024-07-28 202301](https://github.com/user-attachments/assets/bf082e8f-cbcb-45ff-94c4-7a4020644450)
