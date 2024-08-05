@@ -18,12 +18,12 @@ use App\Http\Controllers\RestController;
 */
 
 Route::middleware('auth')->group(function () {
-   Route::get('/', [AuthController::class, 'index']);
    Route::get('/', [AttendanceController::class, 'getindex']);
    Route::get('/attendance/start', [AttendanceController::class, 'startAttendance']);
    Route::get('/attendance/end', [AttendanceController::class, 'endAttendance']);
-   Route::get('/attendance/{num}', [AttendanceController::class, 'getAttendance']);
-   Route::get('/break/start/', [RestController::class, 'startRest']);
+   Route::get('/attendance/{date?}', [AttendanceController::class, 'getAttendance']);
+   Route::get('/attendances/{date}', [AttendanceController::class, 'show']);
+   Route::get('/break/start', [RestController::class, 'startRest']);
    Route::get('/break/end', [RestController::class, 'endRest']);
 });
 

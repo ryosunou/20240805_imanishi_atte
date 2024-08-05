@@ -30,6 +30,7 @@
             @csrf
             <button class="attendance__button-submit" type="submit" {{ !$startAttendance || $endAttendance ? 'disabled' : '' }}>勤務終了</button>
         </form>
+        @if ($startAttendance && !$endAttendance)
         <form class="attendance__button" action="{{ url('/break/start') }}" method="get" id="start-break-form">
             @csrf
             <button class="attendance__button-submit" type="submit" {{ session('restStarted') ? 'disabled' : '' }}>休憩開始</button>
@@ -38,6 +39,14 @@
             @csrf
             <button class="attendance__button-submit" type="submit" {{ !session('restStarted') ? 'disabled' : '' }}>休憩終了</button>
         </form>
+        @else
+        <form class="attendance__button">
+            <button class="attendance__button-submit" disabled>休憩開始</button>
+        </form>
+        <form class="attendance__button">
+            <button class="attendance__button-submit" disabled>休憩終了</button>
+        </form>
+        @endif
     </div>
 </div>
 @endsection

@@ -22,8 +22,6 @@ class AttendanceController extends Controller
         $startAttendance = $attendance ? true : false;
         $endAttendance = $attendance && $attendance->end_time ? true : false;
 
-
-
         return view('index', [
             'startAttendance' => $startAttendance,
             'endAttendance' => $endAttendance,
@@ -34,7 +32,6 @@ class AttendanceController extends Controller
     public function startAttendance(Request $request)
     {
         $user = Auth::user();
-
         $today = Carbon::today();
 
         if (Carbon::now()->hour < 0) {
@@ -57,6 +54,8 @@ class AttendanceController extends Controller
 
         ]);
 
+
+
         return redirect()->back()->with('message', '勤務を開始しました');
     }
 
@@ -64,7 +63,6 @@ class AttendanceController extends Controller
     {
         $user = Auth::user();
         $today = Carbon::today();
-
 
         $attendance = Attendance::where('user_id', $user->id)->whereDate('start_time', $today->toDateString())->first();
 
@@ -77,16 +75,96 @@ class AttendanceController extends Controller
             'end_time' => now(),
         ]);
 
+
+
         return redirect()->back()->with('message', '勤務終了が記録されました');
     }
 
-    public function getAttendance($num)
+    public function getAttendance(Request $request, $date = null)
+    {
+        $user = auth()->user();
+        $today = Carbon::today();
+
+        $date = $date ?: Carbon::today()->toDateString();
+
+        $attendances = Attendance::with(['user', 'rests'])
+            ->where('user_id', $user->id)
+            ->whereDate('start_time', $today)
+            ->orderBy('start_time', 'desc')
+            ->paginate(5);
+
+        $attendances->getCollection()->transform(function ($attendance) {
+            $totalWorkTime = 0;
+
+            if ($attendance->end_time) {
+
+                $totalWorkTime = Carbon::parse($attendance->end_time)->diffInSeconds(Carbon::parse($attendance->start_time));
+            } 
+            
+            else {
+                $attendance->work_time_formatted = null;
+                return $attendance; 
+            }
+
+            $totalRestTime = 0;
+
+            foreach ($attendance->rests as $rest) {
+
+                if ($rest->end_time) {
+                    $totalRestTime += Carbon::parse($rest->end_time)->diffInSeconds(Carbon::parse($rest->start_time));
+                }
+            }
+
+            $workTimeInSeconds = $totalWorkTime - $totalRestTime;
+
+            $attendance->work_time_formatted = gmdate('H:i:s', $workTimeInSeconds);
+
+            
+            return $attendance;
+        });
+
+        return view('attendance', compact('attendances', 'date'));
+    }
+
+    public function show($date)
     {
 
-        $attendances = Attendance::where('user_id', Auth::id())->paginate(5);
 
-        $date = Carbon::now();
+        $attendances = Attendance::with('user', 'rests')
+          ->whereDate('start_time', $date)->paginate(5);
+        
 
-        return view('attendance', ['attendances' => $attendances, 'date' => $date]);
+        $attendances->getCollection()->transform(function ($attendance) {
+            $totalWorkTime = 0;
+
+            if ($attendance->end_time) {
+
+                $totalWorkTime = Carbon::parse($attendance->end_time)->diffInSeconds(Carbon::parse($attendance->start_time));
+            } 
+            
+            else {
+                $attendance->work_time_formatted = null;
+                return $attendance;
+            }
+
+            $totalRestTime = 0;
+
+            foreach ($attendance->rests as $rest) {
+
+                if ($rest->end_time) {
+                    $totalRestTime += Carbon::parse($rest->end_time)->diffInSeconds(Carbon::parse($rest->start_time));
+                }
+            }
+
+            $workTimeInSeconds = $totalWorkTime - $totalRestTime;
+
+            $attendance->work_time_formatted = gmdate('H:i:s', $workTimeInSeconds);
+
+            return $attendance;
+        });
+
+
+        return view('attendance', compact('attendances', 'date'));
     }
+
 }

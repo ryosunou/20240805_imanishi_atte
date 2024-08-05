@@ -54,6 +54,20 @@ class RestController extends Controller
 
         session()->forget('restStarted');
 
+        $total_rest_time = 0;
+
+        $rests = Rest::where('attendance_id', $attendance->id)->get();
+
+        foreach ($rests as $rest) {
+            $start_time = strtotime($rest->start_time);
+
+            $end_time = strtotime($rest->end_time);
+
+            $total_rest_time += ($end_time - $start_time);
+
+            $attendance->update(['total_rest_time' => $total_rest_time]);
+        }
+
         return redirect()->back()->with('message', '休憩を終了しました。');
     }
 }

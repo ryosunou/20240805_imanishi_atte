@@ -9,7 +9,12 @@ class Rest extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'attendance_id',
+        'start_time',
+        'end_time'
+    ];
+
 
     public function attendance()
     {
