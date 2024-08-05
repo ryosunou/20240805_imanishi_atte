@@ -29,12 +29,7 @@ PHP 8.3.4<br>Laravel8.83.27<br>MySQL8.0.37
 
 ## テーブル設計
 
-![スクリーンショット 2024-08-01 080726](https://github.com/user-attachments/assets/58688510-ded0-477f-bdae-b15d317b8e55)
 
-
-![スクリーンショット 2024-08-01 080757](https://github.com/user-attachments/assets/7fb3cca5-f8c9-4d79-ac93-e0610c52854a)
-
-![スクリーンショット 2024-08-02 064344](https://github.com/user-attachments/assets/a5a20ac9-712f-4fb8-875f-8c60767ac25a)
 
 
 
