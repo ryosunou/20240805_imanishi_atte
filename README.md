@@ -44,7 +44,7 @@ PHP 8.3.4<br>Laravel8.83.27<br>MySQL8.0.37
 # 環境構築
 ## <br>Dockerビルド
 
-#### 1.git clone　git@github.com:ryosunou/20240805_imanishi_atte.git<br>
+#### 1.　git clone　git@github.com:ryosunou/20240805_imanishi_atte.git<br>
 #### 2.DockerDesktopアプリを立ち上げる<br>
 #### 3.docker-compose up -d --build
 
