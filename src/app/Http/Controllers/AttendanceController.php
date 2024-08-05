@@ -82,13 +82,11 @@ class AttendanceController extends Controller
 
     public function getAttendance(Request $request, $date = null)
     {
-        $user = auth()->user();
         $today = Carbon::today();
 
         $date = $date ?: Carbon::today()->toDateString();
 
         $attendances = Attendance::with(['user', 'rests'])
-            ->where('user_id', $user->id)
             ->whereDate('start_time', $today)
             ->orderBy('start_time', 'desc')
             ->paginate(5);
