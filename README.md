@@ -1,6 +1,7 @@
 # アプリケーション名　(Atte)  
  企業の勤怠管理システム
-<img width="944" alt="image" src="https://github.com/user-attachments/assets/0d673d17-1af9-4241-8b10-5deb3ea9f886">
+<img width="947" alt="image" src="https://github.com/user-attachments/assets/5f6d7559-5429-42b2-b0ea-aeadff2a78fb">
+
 
  ### 作成した目的<br>
  人事評価のため
